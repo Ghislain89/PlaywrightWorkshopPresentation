@@ -5,7 +5,7 @@
 
 ----
 ## What is Playwright?
-* A tool for Web Automation using Chromium, Webkit and Firefix. 
+* A tool for Web Automation using Chromium, Webkit and Firefox. 
 * Supports JavaScript, Typescript, Python, .NET, and Java.
 * Supports Emulation of Chrome for Android and Mobile Safari
 
