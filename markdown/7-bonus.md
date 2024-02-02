@@ -22,19 +22,6 @@ _"Error: A snapshot doesn't exist at example.spec.ts-snapshots/example-test-1-ch
 ### Visual Regression Testing - The Challenges
 * Dynamic or Volatile Elements change often, causing mismatches
     * Apply Custom CSS to hide these elements
-
-```ts 
-import { test, expect } from '@playwright/test';
-
-test('example test', async ({ page }) => {
-  await page.goto('https://playwright.dev');
-  await expect(page).toHaveScreenshot({ stylePath: path.join(__dirname, 'screenshot.css') });
-});
-```
-----
-## Visual Regression Testing - The Challenges
-* Dynamic or Volatile Elements change often, causing mismatches
-    * Apply Custom CSS to hide these elements
     * Mask elements by locator
 * Snapshots are unique per browser and operating system.
 * Locally generated screenshots (on Windows/OSX) won't pass in Linux CI.
