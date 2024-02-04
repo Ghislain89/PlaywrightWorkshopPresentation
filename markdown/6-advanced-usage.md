@@ -12,7 +12,7 @@
 ----
 ### Waiting for Requests
 
-```ts
+```ts []
 // Start waiting for request before clicking. Note no await.
 const requestPromise = page.waitForRequest('https://example.com/resource');
 await page.getByText('trigger request').click();
@@ -29,7 +29,7 @@ const request = await requestPromise;
 ----
 ### Waiting for Responses
 
-```ts
+```ts []
 // Start waiting for response before clicking. Note no await.
 const responsePromise = page.waitForResponse('https://example.com/resource');
 await page.getByText('trigger response').click();
@@ -46,7 +46,7 @@ const response = await responsePromise;
 ----
 ### Mocking Responses
 
-```ts
+```ts []
 await page.route('**/api/fetch_data', route => route.fulfill({
   status: 200, // Set an explicit response code
   body: testData, // Put whatever data you need here!
@@ -56,7 +56,7 @@ await page.goto('https://example.com');
 
 ----
 ### Modifying Responses
-```ts
+```ts []
 test('gets the json from api and adds a new fruit', async ({ page }) => {
   // Get the response and add to it
   await page.route('*/**/api/v1/fruits', async route => {
@@ -65,7 +65,7 @@ test('gets the json from api and adds a new fruit', async ({ page }) => {
     json.push({ name: 'Playwright', id: 100 });
     // Fulfill using the original response, while patching the response body
     // with the given JSON object.
-    await route.fulfill({ response, json });
+    await route.fulfill({  status: 200, response, json });
   });
 
   // Go to the page
@@ -82,7 +82,7 @@ test('gets the json from api and adds a new fruit', async ({ page }) => {
 
 ----
 ### Storing Authentication State
-```ts
+```ts []
 import { test as setup, expect } from '@playwright/test';
 
 const authFile = 'playwright/.auth/user.json';
@@ -100,7 +100,7 @@ setup('authenticate', async ({ page }) => {
 
 ----
 ### Using Authentication State
-```ts
+```ts []
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
@@ -142,7 +142,7 @@ Let's look at an example!
 
 ----
 ### Page Objects without fixtures
-```ts
+```ts []
 test.describe('todo tests', () => {
   let todoPage;
 
@@ -161,7 +161,7 @@ test.describe('todo tests', () => {
 ```
 ----
 ### Page Objects with fixtures
-```ts
+```ts []
 import { test as base } from '@playwright/test';
 import { TodoPage } from './todo-page';
 
@@ -179,7 +179,7 @@ const test = base.extend<{ todoPage: TodoPage }>({
 ```
 ----
 ### Page Objects with fixtures
-```ts
+```ts []
 test('should add an item', async ({ todoPage }) => {
   await todoPage.addToDo('my item');
   // ...

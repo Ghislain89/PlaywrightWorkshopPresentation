@@ -2,13 +2,13 @@
 
 - Visual Regression Testing
 - Accessability Testing
-- Component Testing
+- Component Testing [out of scope for today]
 - CI Integration
 - Linting
 
 ----
 ### Visual Regression Testing
-```ts
+```ts []
 import { test, expect } from '@playwright/test';
 
 test('example test', async ({ page }) => {
@@ -27,7 +27,7 @@ _"Error: A snapshot doesn't exist at example.spec.ts-snapshots/example-test-1-ch
 * Locally generated screenshots (on Windows/OSX) won't pass in Linux CI.
 
 ---
-```ts 
+```ts [] 
 import { test, expect } from '@playwright/test';
 
 test('example test', async ({ page }) => {
@@ -37,7 +37,7 @@ test('example test', async ({ page }) => {
 ```
 
 
-```ts
+```ts []
 await page.goto('https://playwright.dev');
 await expect(page).toHaveScreenshot({
   mask: [page.locator('img')],
@@ -49,7 +49,7 @@ await expect(page).toHaveScreenshot({
 ### Accessability Testing
 * Playwright needs an additional library like _Axe_ to run accessability tests. 
 
-```ts
+```ts []
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright'; // 1
 

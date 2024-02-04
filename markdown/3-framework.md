@@ -1,29 +1,26 @@
-## Framework
-- What is Playwright?
-- Chrome DevTools vs WebDriver
-- Why Playwright?
+### Framework
+* What is Playwright?
+* Comparison between Chrome DevTools and WebDriver
+* Advantages of using Playwrigh
 
 ----
-## What is Playwright?
-* A tool for Web Automation using Chromium, Webkit and Firefox. 
-* Supports JavaScript, Typescript, Python, .NET, and Java.
-* Supports Emulation of Chrome for Android and Mobile Safari
+### What is Playwright?
+* Playwright is a powerful web automation tool that supports Chromium, Webkit, and Firefox browsers. 
+* It offers support for popular programming languages including JavaScript, Typescript, Python, .NET, and Java.
+* Playwright allows for emulation of Chrome for Android and Mobile Safari.
 
 ----
-
-## Chrome DevTools vs WebDriver
-* Playwright uses Chrome Dev Tools for Chrome/Chromium
-* Similar custom implementation for Firefox/Webkit
-* CDT Generally faster compared to WebDriver
-* Granular control over the browser, allowing for things like intercepting network traffic
-* No need to manage webdrivers!
+### Chrome DevTools vs WebDriver
+* Playwright leverages the Chrome DevTools for Chrome/Chromium browser automation.
+* For Firefox and Webkit, Playwright provides a similar custom implementation.
+* Compared to WebDriver, Chrome DevTools generally offers faster performance.
+* Chrome DevTools allows for granular control over the browser.
+* One major benefit of Playwright is that you don't need to manage webdrivers!
 
 ----
-
-## Why Playwright?
+### Why Playwright?
 * Web First Assertions: Retry until timeout
 * Locators: Supercharged Element references with actionability checks!
-* When used with the runner
-    * Sharding, Parallelisation, automatic browser management all out of the box!
+* Sharding, Parallelization, automatic browser management all out of the box!
 * Context Management, without the hassle.
 * Heaps of tools to to make your developer experience better!
