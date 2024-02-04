@@ -1,13 +1,17 @@
 ### Tooling
+- VSCode Extension
 - Code Generator
 - Debugging
 - Trace Viewer
 - UI mode
 
 ----
-### Code Generator
-* Two ways of generating testcases
-* Codegen will try to implement Playwright's best practices when generating locators
+### VSCode extension
+![Alt text](../images/testrunner.gif)
+
+----
+### Codegen with VSCode extension
+![Alt text](../images/codegen-vscode.png)
 
 ----
 ### Codegen through CLI
@@ -15,10 +19,6 @@
 npx playwright codegen demo.playwright.dev/todomvc
 ``` 
 ![Alt text](../images/codegen.png)
-
-----
-### Codegen with Vscode extension
-![Alt text](../images/codegen-vscode.png)
 
 ----
 ### Debugging
@@ -48,9 +48,8 @@ export default defineConfig({
 ### Trace Viewer
 ![Alt text](../images/trace-viewer.png)
 
----
+----
 ### UI Mode
-* Run your testcases and inspect just about anything while the test is running!
-
 ```npx playwright test --ui```
+![Alt text](../images/ui-mode.png)
 

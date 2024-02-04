@@ -19,12 +19,18 @@ test('example test', async ({ page }) => {
 _"Error: A snapshot doesn't exist at example.spec.ts-snapshots/example-test-1-chromium-darwin.png, writing actual."_
 
 ----
+### Assignment
+* Create a testcase that takes a screenshot of the login page
+* Run it once to generate the snapshot
+* Run it a second time, does it pass?
+
+----
 ### Visual Regression Testing - The Challenges
-* Dynamic or Volatile Elements change often, causing mismatches
+* Dynamic or volatile elements change often, causing mismatches
     * Apply Custom CSS to hide these elements
     * Mask elements by locator
 * Snapshots are unique per browser and operating system.
-* Locally generated screenshots (on Windows/OSX) won't pass in Linux CI.
+* Locally generated screenshots (on Windows/macOS) won't pass in (Linux) CI.
 
 ---
 ```ts [] 
@@ -46,6 +52,13 @@ await expect(page).toHaveScreenshot({
 ```
 
 ----
+### Assignment
+* Mask the volatile element!
+* Update the snapshot
+* Run it a second time, does your test pass?
+
+
+----
 ### Accessability Testing
 * Playwright needs an additional library like _Axe_ to run accessability tests. 
 
@@ -64,8 +77,10 @@ test.describe('homepage', () => { // 2
 NOTE: It scans _current_ state. make sure the page is in the desired state.
 
 ----
-### Component Testing
-<TODO>
+### Assigment
+* Create a testcase that adds a few todos. 
+* Once the Todos are created, run an accessability scan with Axe.
+* How many violations are there?
 
 ---
 ### CI Integration
@@ -104,13 +119,16 @@ jobs:
         env:
           HOME: /root
 ```
+----
+### Assigment
+* Try and get the Github Actions workflow running!
 
 ---
 ### Linting
 * Mistakes are easy to make
 * Best practices are hard to implement, even harder to maintain
 
-Linting _can_ help with Playwright's plugin for ESlint
+Linting _can_ help with this. Playwright supplies an ESLint plugin that enforces some best practices
 example: Prevent a ``test.only`` from being comitted
 
 * Plugin is _very_ opinionated, might not work well for everyone.

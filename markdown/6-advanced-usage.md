@@ -77,12 +77,20 @@ test('gets the json from api and adds a new fruit', async ({ page }) => {
 ```
 
 ----
+#### Assignment!
+Attempting to create a user that already exists results in a HTTP Statuscode _409_ on the register endpoint
+* Duplicate the testcase you created earlier
+* Apply response modification to trigger a 409 and a toasters that shows the user already exists.
 
+Remember: Especially for toasters, web first assertions are your friend.
+
+----
 ### Reusing authentication sessions
 
 ----
-### Storing Authentication State
+#### Storing Authentication State
 ```ts []
+//auth.setup.ts
 import { test as setup, expect } from '@playwright/test';
 
 const authFile = 'playwright/.auth/user.json';
@@ -99,7 +107,7 @@ setup('authenticate', async ({ page }) => {
 ```
 
 ----
-### Using Authentication State
+#### Using Authentication State
 ```ts []
 import { defineConfig, devices } from '@playwright/test';
 
@@ -120,24 +128,30 @@ export default defineConfig({
   ],
 });
 ```
+----
+#### Assignment!
+
+* Write a setup testcase that stores authentication state
+* Update the testcase you created earlier to make use of this authenticated state
+* Run your testcase again!
 
 ----
 ### Page Objects (React Example)
 * Page Object Classes describing interactions for _each_ component
-* Page Object Classes describing interactions for _each_ page
+* Page Object Classes describing interactions for _each_ page, typically uses 1 or more components
+* Tests only use interactions/functions and do not reference elements directly.
 
-* Components exposed to test through a page
-* Locators _must_ be accessed through functions
+* _KISS_
 
 Let's look at an example!
 
 ----
 ### Fixtures
-* Playwright is Fixture based
 * Fixtures can contain just about anything you want
   * Testdata
   * Helper(s)
   * Page Objects!
+* Fixtures are scoped to the consuming testcase.
 * The _page_ we've been seeing in many slides, is one of Playwrights built in fixtures. 
 
 ----
@@ -190,3 +204,10 @@ test('should remove an item', async ({ todoPage }) => {
   // ...
 });
 ```
+----
+#### Assignment!
+
+* Refactor your testcase to use the page objects I defined. 
+* Try to use Fixtures!
+
+*hint*: Some preperation has already been done

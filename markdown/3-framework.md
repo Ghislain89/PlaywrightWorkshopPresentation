@@ -19,8 +19,8 @@
 
 ----
 ### Why Playwright?
-* Web First Assertions: Retry until timeout
-* Locators: Supercharged Element references with actionability checks!
+* Web First Assertions: _retry_ until timeout
+* Locators: Supercharged Element references with _actionability checks!_
 * Sharding, Parallelization, automatic browser management all out of the box!
 * Context Management, without the hassle.
 * Heaps of tools to to make your developer experience better!

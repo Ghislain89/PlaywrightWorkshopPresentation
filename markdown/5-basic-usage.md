@@ -3,7 +3,7 @@
 - Tests in Playwright
 - Playwright API, interacting with your App.
 - Locators & ElementHandles
-- Web First Assertions?
+- Web First Assertions
 - Setup & Configuration
 - Parallelization
 - Reports
@@ -37,6 +37,8 @@ Drag & Drop: dragTo(page.locator('#item-to-drop-at'));
 File upload: setInputFiles(path.join(__dirname, 'myfile.pdf'));
 ```
 
+> Before interacting with an element, Playwright will perform actionability checks, e.g. check visbility.
+
 ----
 ### Locators
 Playwright offers two methods for referencing elements
@@ -62,10 +64,17 @@ await locator.click();
 ```
 
 ----
+### Best Practices
+* Test user-visible behavior
+  * Prefer user-facing attributes to XPath or CSS selectors
+* Make tests as isolated as possible 
+* Avoid testing third-party dependencies, only test what _you_ control.
+
+
+----
 ### Web First Assertions
 * Regular Assertions usually only assert *once*
 * Lazy loading or slower websites may result in *flaky* tests.
-
 * Web First assertion(s) continously retry the assertion until the condition is met (or a timeout)
 * Input for a web first assertion is a *locator*
 
@@ -172,47 +181,6 @@ export default defineConfig({
 * You can provide 1 or more reporters.
 
 ----
-
-### Reports - Overview
-
-----
-
-#### List
-```shell
-npx playwright test --reporter=list
-
-Running 124 tests using 6 workers
-
- 1  ✓ should access error in env (438ms)
- 2  ✓ handle long test names (515ms)
-```
-
-----
-
-#### Line
-```shell
-npx playwright test --reporter=line
-
-Running 124 tests using 6 workers
-  1) dot-reporter.spec.ts:20:1 › render expected ===================================================
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: 1
-    Received: 0
-
-[23/124] gitignore.spec.ts - should respect nested .gitignore
-```
-
-----
-#### Dot
-```shell
-npx playwright test --reporter=dot
-Running 124 tests using 6 workers
-······F·············································
-```
-
-----
 ### HTML reporter
 * Contains Test & Step Information
 * If enabled, trace files per testcase.
@@ -243,12 +211,10 @@ The App should start on localhost:3000
 ----
 #### Assignment!
 
-* Create a testcase that registers a new account and then logs in.
-  * either use the code generator or do this manually.
-* Configure Playwright to store HTML reports
-* Configure Playwright to always store traces
-* Duplicate the testcase a couple times
-* Enable them to run in Parallel
+* Write a testcase to automate the registration and login process for a new account.
+* Set up Playwright to save HTML reports for your tests.
+* Configure Playwright to always capture and store execution traces for better debugging and analysis.
+* Duplicate the testcase a few times
+* Enable parallel execution for these testcases
 
-> make sure to enable headful mode so you can see what's happening.
-> I've already created page objects. Ignore these for now, we will use them later.
+> I've already created page objects, we will use these later. Ignore them for now.
