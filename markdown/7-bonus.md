@@ -52,7 +52,7 @@ await expect(page).toHaveScreenshot({
 ```
 
 ----
-### Assignment 6
+### Assignment 5
 * Mask the volatile element!
 * Update the snapshot
 * Run it a second time, does your test pass?
@@ -77,7 +77,7 @@ test.describe('homepage', () => { // 2
 NOTE: It scans _current_ state. make sure the page is in the desired state.
 
 ----
-### Assigment
+###  Assignment 7
 * Create a testcase that adds a few todos. 
 * Once the Todos are created, run an accessability scan with Axe.
 * How many violations are there?
@@ -120,7 +120,7 @@ jobs:
           HOME: /root
 ```
 ----
-### Assigment
+### Assingment 8
 * Try and get the Github Actions workflow running!
 
 ---
