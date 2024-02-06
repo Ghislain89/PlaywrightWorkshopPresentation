@@ -209,5 +209,6 @@ test('should remove an item', async ({ todoPage }) => {
 
 * Refactor your testcase to use the page objects I defined. 
 * Try to use Fixtures!
+* Expand the testcase to also add a Todo and assert that your todo was succesfully created.
 
 *hint*: Some preperation has already been done
