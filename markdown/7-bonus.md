@@ -19,7 +19,7 @@ test('example test', async ({ page }) => {
 _"Error: A snapshot doesn't exist at example.spec.ts-snapshots/example-test-1-chromium-darwin.png, writing actual."_
 
 ----
-### Assignment
+### Assignment 5
 * Create a testcase that takes a screenshot of the login page
 * Run it once to generate the snapshot
 * Run it a second time, does it pass?
@@ -52,7 +52,7 @@ await expect(page).toHaveScreenshot({
 ```
 
 ----
-### Assignment
+### Assignment 6
 * Mask the volatile element!
 * Update the snapshot
 * Run it a second time, does your test pass?

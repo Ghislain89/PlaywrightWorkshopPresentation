@@ -77,7 +77,7 @@ test('gets the json from api and adds a new fruit', async ({ page }) => {
 ```
 
 ----
-#### Assignment!
+#### Assignment 2
 Attempting to create a user that already exists results in a HTTP Statuscode _409_ on the register endpoint
 * Duplicate the testcase you created earlier
 * Apply response modification to trigger a 409 and a toasters that shows the user already exists.
@@ -129,7 +129,7 @@ export default defineConfig({
 });
 ```
 ----
-#### Assignment!
+#### Assignment 3
 
 * Write a setup testcase that stores authentication state
 * Update the testcase you created earlier to make use of this authenticated state
@@ -205,7 +205,7 @@ test('should remove an item', async ({ todoPage }) => {
 });
 ```
 ----
-#### Assignment!
+#### Assignment 4
 
 * Refactor your testcase to use the page objects I defined. 
 * Try to use Fixtures!

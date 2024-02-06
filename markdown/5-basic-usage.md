@@ -187,12 +187,6 @@ export default defineConfig({
 ![Alt text](../images/htmlreport.png)
 
 ----
-#### Blob Reporter
-
-* Outputs report in a blob
-* Primairily used for merging multiple blobs to create a report afterwards.
-
-----
 #### Community Plugins
 
 ![Alt text](../images/dashboard.png)
@@ -200,16 +194,17 @@ export default defineConfig({
 
 
 ----
-#### Assignment!
+#### Assignment 1.
 
 Checkout Repository: https://github.com/Ghislain89/PlaywrightWorkshop
 
-Start webApp by running ```npm run dev```
+* Run `npm install`
+* Start webApp by running ```npm run dev```
 
-The App should start on localhost:3000
+The webApp should start on localhost:3000
 
 ----
-#### Assignment!
+#### Assignment 1
 
 * Write a testcase to automate the registration and login process for a new account.
 * Set up Playwright to save HTML reports for your tests.
