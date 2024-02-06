@@ -211,5 +211,6 @@ The webApp should start on localhost:3000
 * Configure Playwright to always capture and store execution traces for better debugging and analysis.
 * Duplicate the testcase a few times
 * Enable parallel execution for these testcases
+* Did you encounter any issues?
 
 > I've already created page objects, we will use these later. Ignore them for now.

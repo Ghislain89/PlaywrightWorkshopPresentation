@@ -82,7 +82,7 @@ Attempting to create a user that already exists results in a HTTP Statuscode _40
 * Duplicate the testcase you created earlier
 * Apply response modification to trigger a 409 and a toasters that shows the user already exists.
 
-Remember: Especially for toasters, web first assertions are your friend.
+> Especially for toasters, web first assertions are your friend!
 
 ----
 ### Reusing authentication sessions
