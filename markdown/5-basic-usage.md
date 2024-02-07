@@ -190,7 +190,6 @@ export default defineConfig({
 #### Community Plugins
 
 ![Alt text](../images/dashboard.png)
-* Playwright HTML Reporter: https://rodrigoodhin.gitlab.io/playwright-html/#/1.1.5/screenshots
 
 
 ----

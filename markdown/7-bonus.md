@@ -141,5 +141,6 @@ Find it on NPM: ``eslint-plugin-playwright``
 2. Discord: https://playwright.dev/community/welcome#community-discord
 3. Stack overflow: https://stackoverflow.com/tags/playwright
 4. Playwright Solutions: https://playwrightsolutions.com/
+5: Community Reporter: https://rodrigoodhin.gitlab.io/playwright-html/#/1.1.5/screenshots
 
 
