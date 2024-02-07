@@ -1,7 +1,7 @@
 ### Framework
 * What is Playwright?
 * Comparison between Chrome DevTools and WebDriver
-* Advantages of using Playwrigh
+* Advantages of using Playwright
 
 ----
 ### What is Playwright?
