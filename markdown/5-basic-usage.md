@@ -1,12 +1,43 @@
 ### Basic Usage
 
+- Setup & Configuration
 - Tests in Playwright
 - Playwright API, interacting with your App.
 - Locators & ElementHandles
 - Web First Assertions
-- Setup & Configuration
 - Parallelization
 - Reports
+
+
+----
+
+### Setup & Configuration
+* Initial set up as easy as running: `npm init playwright@latest`
+* Configuration exposed through `TestConfig` in `playwright.config.ts`
+    * Parallelization
+    * Browsers
+    * Reporters
+    * Global Timeouts
+
+----
+#### Assignment 1A
+
+Checkout Repository: https://github.com/Ghislain89/PlaywrightWorkshop
+
+* Run `npm install`
+* Run `npm run build`
+* Start webApp by running ```npm run start```
+
+> Make sure you have NodeJS LTS or above!
+
+The webApp should start on localhost:3000
+
+----
+#### Assignment 1A
+
+* Write a testcase to automate the registration and login process for a new account.
+
+> I've already created page objects, we will use these later. Ignore them for now.
 
 ----
 ### Tests in Playwright
@@ -38,6 +69,44 @@ File upload: setInputFiles(path.join(__dirname, 'myfile.pdf'));
 ```
 
 > Before interacting with an element, Playwright will perform actionability checks, e.g. check visbility.
+
+----
+### Playwright API - API Requests
+```ts []
+const REPO = 'test-repo-1';
+const USER = 'github-username';
+
+test('should create a bug report', async ({ request }) => {
+  const newIssue = await request.post(`/repos/${USER}/${REPO}/issues`, {
+    data: {
+      title: '[Bug] report 1',
+      body: 'Bug description',
+    }
+  });
+  expect(newIssue.ok()).toBeTruthy();
+  const JsonResp = await newIssue.json();
+  console.log(JsonResp)
+});
+```
+----
+### Playwright API - API Requests
+* Additional configuration for things like headers and authentication in `playwright.config.ts`
+```ts []
+import { defineConfig } from '@playwright/test';
+export default defineConfig({
+  use: {
+    // All requests we send go to this API endpoint.
+    baseURL: 'https://api.github.com',
+    extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      'Accept': 'application/vnd.github.v3+json',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      'Authorization': `token ${process.env.API_TOKEN}`,
+    },
+  }
+});
+```
 
 ----
 ### Locators
@@ -92,54 +161,6 @@ expect(await page.getByText('welcome').isVisible()).toBe(true);
 It is considered a best practice to use web first assertions as much as possible!
 
 ----
-### Playwright API - API Requests
-```ts []
-const REPO = 'test-repo-1';
-const USER = 'github-username';
-
-test('should create a bug report', async ({ request }) => {
-  const newIssue = await request.post(`/repos/${USER}/${REPO}/issues`, {
-    data: {
-      title: '[Bug] report 1',
-      body: 'Bug description',
-    }
-  });
-  expect(newIssue.ok()).toBeTruthy();
-  const JsonResp = await newIssue.json();
-  console.log(JsonResp)
-});
-```
-----
-### Playwright API - API Requests
-* Additional configuration for things like headers and authentication in `playwright.config.ts`
-```ts []
-import { defineConfig } from '@playwright/test';
-export default defineConfig({
-  use: {
-    // All requests we send go to this API endpoint.
-    baseURL: 'https://api.github.com',
-    extraHTTPHeaders: {
-      // We set this header per GitHub guidelines.
-      'Accept': 'application/vnd.github.v3+json',
-      // Add authorization token to all requests.
-      // Assuming personal access token available in the environment.
-      'Authorization': `token ${process.env.API_TOKEN}`,
-    },
-  }
-});
-```
-
-----
-
-### Setup & Configuration
-* Initial set up as easy as running: `npm init playwright@latest`
-* Configuration exposed through `TestConfig` in `playwright.config.ts`
-    * Parallelization
-    * Browsers
-    * Reporters
-    * Global Timeouts
-
-----
 ### Parallelization
 
 Playwright runs _files_ in parallel. Running _tests_ in parallel requires configuration
@@ -187,26 +208,17 @@ export default defineConfig({
 ![Alt text](../images/htmlreport.png)
 
 ----
+### HTML reporter
+![Alt text](../images/htmlreport-trace.png)
+
+----
 #### Community Plugins
 
 ![Alt text](../images/dashboard.png)
-* Playwright HTML Reporter: https://rodrigoodhin.gitlab.io/playwright-html/#/1.1.5/screenshots
-
 
 ----
-#### Assignment 1.
+#### Assignment 1B
 
-Checkout Repository: https://github.com/Ghislain89/PlaywrightWorkshop
-
-* Run `npm install`
-* Start webApp by running ```npm run dev```
-
-The webApp should start on localhost:3000
-
-----
-#### Assignment 1
-
-* Write a testcase to automate the registration and login process for a new account.
 * Set up Playwright to save HTML reports for your tests.
 * Configure Playwright to always capture and store execution traces for better debugging and analysis.
 * Duplicate the testcase a few times
