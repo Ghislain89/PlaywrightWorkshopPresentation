@@ -123,7 +123,7 @@ jobs:
 ### Assingment 8
 * Try and get the Github Actions workflow running!
 
----
+----
 ### Linting
 * Mistakes are easy to make
 * Best practices are hard to implement, even harder to maintain
@@ -134,3 +134,12 @@ example: Prevent a ``test.only`` from being comitted
 * Plugin is _very_ opinionated, might not work well for everyone.
 
 Find it on NPM: ``eslint-plugin-playwright``
+
+----
+### Online Sources
+1. https://playwright.dev
+2. Discord: https://playwright.dev/community/welcome#community-discord
+3. Stack overflow: https://stackoverflow.com/tags/playwright
+4. Playwright Solutions: https://playwrightsolutions.com/
+
+
