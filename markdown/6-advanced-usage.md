@@ -1,5 +1,4 @@
 ### Advanced Usage
-
 - Network Monitoring & Manipulation
 - Reusing authentication sessions
 - Page objects
@@ -81,6 +80,7 @@ test('gets the json from api and adds a new fruit', async ({ page }) => {
 Attempting to create a user that already exists results in a HTTP Statuscode _409_ on the register endpoint
 * Duplicate the testcase you created earlier
 * Apply response modification to trigger a 409 and a toasters that shows the user already exists.
+* Rerun your other testcases, do they still work?
 
 > Especially for toasters, web first assertions are your friend!
 
@@ -149,7 +149,7 @@ Let's look at an example!
 ### Fixtures
 * Fixtures can contain just about anything you want
   * Testdata
-  * Helper(s)
+  * Helpers
   * Page Objects!
 * Fixtures are scoped to the consuming testcase.
 * The _page_ we've been seeing in many slides, is one of Playwrights built in fixtures. 
@@ -171,26 +171,8 @@ test.describe('todo tests', () => {
     // ...
   });
 });
-
 ```
-----
-### Page Objects with fixtures
-```ts []
-import { test as base } from '@playwright/test';
-import { TodoPage } from './todo-page';
 
-// Extend basic test by providing a "todoPage" fixture.
-const test = base.extend<{ todoPage: TodoPage }>({
-  todoPage: async ({ page }, use) => {
-    const todoPage = new TodoPage(page);
-    await todoPage.goto();
-    await todoPage.addToDo('item1');
-    await todoPage.addToDo('item2');
-    await use(todoPage);
-    await todoPage.removeAll();
-  },
-});
-```
 ----
 ### Page Objects with fixtures
 ```ts []
@@ -209,6 +191,6 @@ test('should remove an item', async ({ todoPage }) => {
 
 * Refactor your testcase to use the page objects I defined. 
 * Try to use Fixtures!
-* Expand the testcase to also add a Todo and assert that your todo was succesfully created.
+* BONUS: Expand the testcase to also add a Todo and assert that your todo was succesfully created.
 
 *hint*: Some preperation has already been done
