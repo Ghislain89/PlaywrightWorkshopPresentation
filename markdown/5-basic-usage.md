@@ -199,7 +199,8 @@ export default defineConfig({
 Checkout Repository: https://github.com/Ghislain89/PlaywrightWorkshop
 
 * Run `npm install`
-* Start webApp by running ```npm run dev```
+* Run `npm run build`
+* Start webApp by running ```npm run start```
 
 The webApp should start on localhost:3000
 
